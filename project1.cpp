@@ -1,23 +1,51 @@
 #include <iostream>
 using namespace std;
 
-struct Studenti{
+enum lendet { MATEMATIKE, ELEKTRO, PROGRAMIM, FIZIKE, SH_KOMUNIKUESE, VEGLA_SOFTUERIKE };
+struct Studenti {
 
-  string emri;
-  string mbiemri;
-  string ID;
-  int notat[6];
+    string emri;
+    string mbiemri;
+    string ID;
+    int notat[6];
+    lendet studentii;
 
 
-  void lexoStudentin();
-  void shtypStudentin();
-  double notaMesatare();
-  bool fitonBurse();
+    void lexoStudentin();
+    void shtypStudentin();
+    double notaMesatare();
+    bool fitonBurse();
+
 
 
 };
 
-int main(){
-    cout<<"Hello world"<<endl;
+
+void Studenti::lexoStudentin() {
+    cout << "Sheno emrin e studentit:" << endl;
+    cin >> emri;
+    cout << "Sheno mbiemrin e studentit:" << endl;
+    cin >> mbiemri;
+    cout << "Sheno ID e studentit:" << endl;
+    cin >> ID;
+
+    for (int i = 0; i < 6; i++) {
+        cout << "Shkruaj noten ne lenden "
+            << (i == MATEMATIKE ? "Matematike" :
+                i == ELEKTRO ? "Elektro" :
+                i == PROGRAMIM ? "Programim" :
+                i == FIZIKE ? "Fizike" :
+                i == SH_KOMUNIKUESE ? "Shkathesi Komunikuese" :
+                "Vegla Softuerike")
+            << ": ";
+        cin >> notat[i];
+    }
+}
+
+
+
+int main() {
+    
+    cout << "Hello world" << endl;
     return 0;
 }
