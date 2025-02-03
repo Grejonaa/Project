@@ -1,5 +1,5 @@
 # Project
-Projekti ne Vegla baze softuerike
+Projekti ne Vegla baze softuerike /n
 Ky sistem i menaxhimit të studentëve C++ i lejon përdoruesit të futin dhe menaxhojnë informacionin e studentëve duke përdorur një strukturë dhe katër funksione.
 
 Struktura (Studenti):
