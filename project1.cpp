@@ -20,15 +20,7 @@ struct Studenti {
 
 };
 
-void addStudent(Studenti &student) {
-    cout << "Shkruaj ID e studentit: ";
-    cin >> student.id;
-    cout << "Shkruaj emrin e studentit: ";
-    cin.ignore();
-    getline(cin, student.name);
-    cout << "Shkruaj Noten: ";
-    cin >> student.grade;
-}
+
 
 void Studenti::lexoStudentin() {
     cout << "Sheno emrin e studentit:" << endl;
@@ -58,25 +50,15 @@ double Studenti::notaMesatare() {
     for (int i = 0; i < 6; i++) {
         shuma += notat[i];
     }
-    return shuma / 6.0; // Pjesetimi me 6 do t'jap mesataren
+    return shuma / 6.0; 
 }
 
 int main() {
-    const int numStudents= 1000;
-
-    //Futja e te dhenave te studentit
-    for (int i = 0; i < numStudents; ++i) {
-        cout << "Enter details for student " << i + 1 << ":\n";
-        addStudent(students[i]);
-    }
-
-    //Printimi i te dhenave
-     for (int i = 0; i < numStudents; ++i) {
-        lexoStudentin(students[i]);
-        cout << "\n";
-    }
-
+   
     Studenti student;
+
+    student.lexoStudentin();
+    
     cout << "Mesatarja e notave te studentit eshte: " << student.notaMesatare() << endl;
     return 0;
 }
