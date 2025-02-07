@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
 
 enum lendet { MATEMATIKE, ELEKTRO, PROGRAMIM, FIZIKE, SH_KOMUNIKUESE, VEGLA_SOFTUERIKE };
@@ -15,6 +17,7 @@ struct Studenti {
     void shtypStudentin();
     double notaMesatare();
     bool fitonBurse();
+    void ruajNeCSV(const string& filename);
 };
 
 
@@ -84,11 +87,30 @@ bool Studenti::fitonBurse(){
     }
 }
 
+void Studenti::ruajNeCSV(const string& filename) {
+    ofstream file(filename, ios::app); 
+    if (file.is_open()) {
+        file << emri << "," << mbiemri << "," << ID << ",";
+        for (int i = 0; i < 6; i++) {
+            file << notat[i] << ",";
+        }
+        file << notaMesatare() << "," << (fitonBurse() ? "Fiton Burse" : "Nuk fiton Burse") << "\n";
+        file.close();
+        cout << "Te dhenat u ruajten ne dokument " << filename << endl;
+        cout << filename << " hapet manualisht ne text editor" << endl;
+        
+    }
+    else {
+        cerr << "Nuk mund te hapet dokumenti " << filename << endl;
+    }
+}
+
 int main() {
    
     Studenti student;
 
     student.lexoStudentin();
     student.shtypStudentin();
+    student.ruajNeCSV("studentet.csv");
     return 0;
 }
