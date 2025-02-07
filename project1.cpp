@@ -56,7 +56,13 @@ void Studenti::shtypStudentin(){
             << notat[i] << endl;
     }
     cout << endl << "Mesatarja e notave te studentit eshte: " << Studenti::notaMesatare() << endl;
-    cout << "Studenti Fiton burse nese 1 = " << Studenti::fitonBurse() << endl;
+    cout << "Studenti fiton burse nese nota mesatare >=8.0 " <<endl;
+    if (Studenti::fitonBurse() == true) {
+    cout << "Fiton Burse" << endl;
+    }
+    else {
+    cout << "Nuk fiton Burse" << endl;
+    }
 }
 
 double Studenti::notaMesatare() {
@@ -65,7 +71,7 @@ double Studenti::notaMesatare() {
     for (int i = 0; i < 6; i++) {
         shuma += notat[i];
     }
-    avg = shuma / 6.0;  // Pjesetimi me 6 do t'jap mesataren
+    avg = shuma / 6.0;  
     return avg; 
 }
 
