@@ -30,17 +30,23 @@ void Studenti::lexoStudentin() {
     cout << "Sheno ID e studentit........ ";
     cin >> ID;
 
-    for (int i = 0; i < 6; i++) {
+   for (int i = 0; i < 6; i++) {
+    do {
         cout << "Shkruaj noten ne lenden "
-            << (i == MATEMATIKE ? "Matematike" :
-                i == ELEKTRO ? "Elektro" :
-                i == PROGRAMIM ? "Programim" :
-                i == FIZIKE ? "Fizike" :
-                i == SH_KOMUNIKUESE ? "Shkathesi Komunikuese" :
-                "Vegla Softuerike")
-            << ": ";
+            << (i == MATEMATIKE ? "Matematike " :
+                i == ELEKTRO ? "Elektro " :
+                i == PROGRAMIM ? "Programim " :
+                i == FIZIKE ? "Fizike " :
+                i == SH_KOMUNIKUESE ? "Shkathesi Komunikuese " :
+                "Vegla Softuerike ");
+            
         cin >> notat[i];
-    }
+
+        if (notat[i] < 5 || notat[i] > 10) {
+            cout << "Gabim! Nota duhet te jete ne mes 5 dhe 10. Provo perseri.\n";
+        }
+    } while (notat[i] < 5 || notat[i] > 10);
+}
 }
 
 void Studenti::shtypStudentin(){
