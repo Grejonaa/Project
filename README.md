@@ -1,28 +1,35 @@
-# Project
-Projekti ne Vegla baze softuerike 
+# Projekti në Vegla Bazë Softuerike  
 
-Ky sistem i menaxhimit të studentëve C++ i lejon përdoruesit të futin dhe menaxhojnë informacionin e studentëve duke përdorur një strukturë dhe katër funksione.
+Ky sistem i menaxhimit të studentëve në C++ i lejon përdoruesit të futin dhe menaxhojnë informacionin e studentëve duke përdorur një strukturë dhe katër funksione.  
 
-Struktura (Studenti):
-Ruan detajet e studentit: identitetin, emrin, moshën dhe notën.
+## Struktura Studenti  
+Ruan detajet e një studenti, përfshirë:  
+- Id  
+- Emrin  
+- Moshën  
+- Notat  
 
-Funksionet dhe qëllimi i tyre:
+## Funksionet dhe qëllimi i tyre  
 
-addstudent(Student &student):
-Merr të dhëna të përdoruesit dhe mbush strukturën Studenti me të dhëna.
+- lexoStudentin()  
+  Merr të dhëna nga përdoruesi dhe mbush strukturën Studenti me të dhëna.  
 
-displayStudent(const Student &student):
-Shfaq informacionin e ruajtur të një studenti.
+- shtypStudentin()  
+  Shfaq informacionin e ruajtur të një studenti.  
 
-updateGrade(Student &student, float newGrade):
-Përditëson notën e një studenti.
+- notaMesatare() 
+  Llogarit notën mesatare të një studenti.  
 
-calculateAverageGrade(const Student students[], int size):
-Llogarit notën mesatare të shumë studentëve.
+- fitonBurse()  
+  Kontrollon nëse studenti fiton bursë bazuar në notën mesatare.  
 
-Funksioni kryesor (main())
+- ruajNeCSV(const string& filename)  
+  Ruajtja e të dhënave të studentit në një dokument CSV.  
 
-Krijon një grup strukturash Studenti për të ruajtur studentë të shumtë.
-Përdor një unazë për të marrë të dhëna për secilin student.
-Shfaq detajet e nxënësit.
-Llogarit dhe printon notën mesatare të të gjithë nxënësve.
+## Funksioni kryesor main()  
+
+- Krijon një objekt Studenti për të ruajtur të dhënat e një studenti.  
+- Thërret funksionin për të lexuar të dhënat e studentit.  
+- Shfaq detajet e studentit.  
+- Llogarit dhe printon notën mesatare të studentit.  
+- Ruajtja e të dhënave në skedar CSV.
